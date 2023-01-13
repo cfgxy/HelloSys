@@ -141,18 +141,22 @@ memItem:
     cmp ecx, 512
     jne memItem
 
+    ; 开启 CR0.PAE
     mov eax, cr4
     or eax, 0b100000
     mov cr4, eax
 
+    ; 开启 IA32_EFER.MSR_LME
     mov ecx, 0xC0000080
     rdmsr
     or eax, 1 << 8
     wrmsr
 
+    ; CR3 指向页目录入口
     mov eax, PGEntry
     mov cr3, eax
 
+    ; 开启 CR0.PG, 自此64位长模式生效
     mov eax, cr0
     or eax, 1 << 31
     mov cr0, eax
