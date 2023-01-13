@@ -12,7 +12,6 @@ entry:
 GDT:
     .DUMMY      Descriptor 0,           0,          0                            ; 空描述符
     .CODE32     Descriptor 0,           Code32Len,  DA_CR|DA_32                  ; 32位代码段
-    .CODE64     Descriptor 0,           Code64Len,  DA_CR|DESC_L                 ; 64位代码段
     .VIDEO      Descriptor 0xB8000,     0xFFFF,     DA_DRW|DA_DPL0               ; 显存首地址
 GdtLen  equ $ - GDT       ; GDT长度
 GdtPtr  dw GdtLen         ; GDT界限
@@ -90,17 +89,6 @@ HelloMsg db "Hello, OS32 World!!!"
 HelloLen equ $-HelloMsg
 
 Code32Len equ $-start32
-
-
-
-[bits 64]
-start64:
-    jmp $
-
-Hello64Msg db "Hello, OS64 World!!!"
-Hello64Len equ $-HelloMsg
-
-Code64Len equ $-start64
 
 times 510-($-$$)    db 0
 dw 0xaa55

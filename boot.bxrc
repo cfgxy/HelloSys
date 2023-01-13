@@ -2,7 +2,7 @@
 megs: 64
 romimage: file="./bochs_imgs/BIOS-bochs-latest", address=0x0, options=none
 vgaromimage: file="./bochs_imgs/VGABIOS-lgpl-latest"
-floppya: 1_44="./02-protect", status=inserted
+floppya: 1_44="./03-x86_64", status=inserted
 boot: floppy
 
 # no floppyb
