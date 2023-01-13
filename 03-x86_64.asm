@@ -122,7 +122,7 @@ start32:
     mov eax, PDE(PGEntry + 0x3000, (PG_RW|PG_S|PG_P)) >> 32
     mov dword [PGEntry + 0x2FF8 + 4], eax
 
-    ; PTE: 2M物理地址空间
+    ; PTE: 2M物理地址空间页表
     mov ecx, 0
 memItem:
     mov eax, ecx
