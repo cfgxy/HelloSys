@@ -1,3 +1,9 @@
+; ELF可执行文件汇编, 用内核中断打印Hello World
+; nasm 编译后 用ld连接 在Linux系统执行
+; 参考文档:
+; https://www.nasm.us/xdoc/2.16.01/html/nasmdoc0.html
+; docs/nasm.pdf
+
 [section .text]
     global _start
 _start:

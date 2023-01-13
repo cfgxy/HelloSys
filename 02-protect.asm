@@ -1,5 +1,12 @@
-; 描述符
-; %macro Descriptor 3
+; 32位保护模式的进入
+; nasm 编译后用 bochs 启动
+; 参考文档:
+; https://www.bookstack.cn/read/linux-insides-zh/Booting-linux-bootstrap-1.md
+; https://www.coreboot.org/Developer_Manual/Memory_map
+; https://en.wikipedia.org/wiki/BIOS_interrupt_call
+; https://petpwiuta.github.io/2020/05/09/Bochs%E8%B0%83%E8%AF%95%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
+; docs/自己动手写操作系统完全版.pdf
+
 %include "pm.inc.asm"
 %define GDTSelector(addr, RPL) ((GDT.%+addr-GDT) + RPL)
 %define BaseOfLoaderPhyAddr 07c00H

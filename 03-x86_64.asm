@@ -1,5 +1,13 @@
-; 描述符
-; %macro Descriptor 3
+; 64位长模式的进入
+; nasm 编译后用 bochs 启动
+; 参考文档:
+; https://blog.csdn.net/qq_17853613/article/details/109127807
+; https://wiki.osdev.org/Setting_Up_Long_Mode
+; https://blog.csdn.net/weixin_38526180/article/details/107414050
+; https://blog.csdn.net/huang987246510/article/details/104616857
+; https://www.bookstack.cn/read/linux-insides-zh/Booting-linux-bootstrap-4.md
+; https://www.anquanke.com/post/id/260060
+
 %include "pm.inc.asm"
 %include "pg.inc.asm"
 

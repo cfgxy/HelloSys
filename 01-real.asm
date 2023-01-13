@@ -1,3 +1,8 @@
+; 实模式用BIOS中断打印Hello world
+; nasm 编译后用 bochs 启动
+; 参考文档:
+; docs/自己动手写操作系统完全版.pdf
+
 ORG 07c00H
 
 mov ax, cs
